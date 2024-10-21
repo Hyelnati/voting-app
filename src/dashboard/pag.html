@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ongoing Polls</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Active Page Button Styling */
+      .page-btn.active {
+        background-color: #28aa63;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="p-6">
+      <header class="flex justify-between items-center py-4">
+        <img src="../../public/Voter..png" alt="Logo" class="h-7 w-[6.5rem]" />
+        <div class="flex items-center gap-4">
+          <h1>Michael Henry <br /><span>@member</span></h1>
+          <img src="../../public/Alt Arrow Down.svg" alt="Dropdown" />
+        </div>
+      </header>
+
+      <div class="my-6">
+        <h2 class="text-2xl font-bold mb-6">Ongoing Polls</h2>
+
+        <!-- Polls Grid Container -->
+        <div
+          id="pollsContainer"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Poll cards will be inserted here dynamically -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center space-x-2 mt-8">
+          <!-- Left Arrow -->
+          <button id="prevBtn" class="px-3 py-1 rounded bg-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 4.293a1 1 0 011.414 1.414L9.414 10l4.293 4.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <!-- Page Numbers -->
+          <div id="paginationNumbers" class="flex space-x-2">
+            <!-- Page numbers will be dynamically generated here -->
+          </div>
+
+          <!-- Right Arrow -->
+          <button id="nextBtn" class="px-3 py-1 rounded bg-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.707 15.707a1 1 0 01-1.414-1.414L10.586 10 6.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Example dataset for polls (replace this with API data if necessary)
+      const polls = [
+        {
+          title: 'August Team Member',
+          votes: 32,
+          nominees: 5,
+          timeRemaining: '7 days remaining',
+          icon: '../../public/Team.svg',
+        },
+        {
+          title: 'Most hardworking member',
+          votes: 12,
+          nominees: 3,
+          timeRemaining: '2 days remaining',
+          icon: '../../public/Hardwork.svg',
+        },
+        {
+          title: 'Best Leader',
+          votes: 40,
+          nominees: 6,
+          timeRemaining: '12 days remaining',
+          icon: '../../public/Leader.svg',
+        },
+        {
+          title: 'Employee of the month',
+          votes: 22,
+          nominees: 4,
+          timeRemaining: '4 days remaining',
+          icon: '../../public/Employee.svg',
+        },
+        {
+          title: 'Innovator Award',
+          votes: 30,
+          nominees: 5,
+          timeRemaining: '9 days remaining',
+          icon: '../../public/Innovation.svg',
+        },
+        {
+          title: 'Best Designer',
+          votes: 18,
+          nominees: 4,
+          timeRemaining: '3 days remaining',
+          icon: '../../public/Design.svg',
+        },
+        {
+          title: 'Team Spirit Award',
+          votes: 50,
+          nominees: 7,
+          timeRemaining: '5 days remaining',
+          icon: '../../public/Spirit.svg',
+        },
+        {
+          title: 'Outstanding Contributor',
+          votes: 27,
+          nominees: 4,
+          timeRemaining: '1 day remaining',
+          icon: '../../public/Contributor.svg',
+        },
+        {
+          title: 'Best Newcomer',
+          votes: 15,
+          nominees: 3,
+          timeRemaining: '6 days remaining',
+          icon: '../../public/Newcomer.svg',
+        },
+        {
+          title: 'Innovation Challenge',
+          votes: 44,
+          nominees: 8,
+          timeRemaining: '8 days remaining',
+          icon: '../../public/Challenge.svg',
+        },
+        {
+          title: 'Creative Director Award',
+          votes: 19,
+          nominees: 4,
+          timeRemaining: '10 days remaining',
+          icon: '../../public/Director.svg',
+        },
+        {
+          title: 'Top Performer',
+          votes: 29,
+          nominees: 5,
+          timeRemaining: '11 days remaining',
+          icon: '../../public/Performer.svg',
+        },
+      ]
+
+      const pollsPerPage = 6 // Number of polls to display per page
+      let currentPage = 1
+
+      // Function to display polls dynamically
+      function displayPolls(page) {
+        const startIndex = (page - 1) * pollsPerPage
+        const endIndex = startIndex + pollsPerPage
+        const paginatedPolls = polls.slice(startIndex, endIndex)
+        const pollsContainer = document.getElementById('pollsContainer')
+        pollsContainer.innerHTML = '' // Clear previous polls
+
+        paginatedPolls.forEach((poll) => {
+          const pollCard = `
+            <div class="border rounded-lg p-4 shadow-lg bg-white">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold">${poll.title}</h3>
+                <img src="${poll.icon}" alt="Poll Icon" class="h-6 w-6">
+              </div>
+              <p class="text-gray-500">${poll.votes} Votes</p>
+              <p class="text-gray-500">${poll.nominees} Nominees</p>
+              <p class="text-green-600 mb-4">${poll.timeRemaining}</p>
+              <button class="text-green-500">View Poll</button>
+            </div>
+          `
+          pollsContainer.innerHTML += pollCard
+        })
+      }
+
+      // Pagination Variables
+      const totalPages = Math.ceil(polls.length / pollsPerPage)
+      const paginationNumbers = document.getElementById('paginationNumbers')
+
+      // Generate Pagination Numbers
+      function generatePagination() {
+        paginationNumbers.innerHTML = '' // Clear previous numbers
+        for (let i = 1; i <= totalPages; i++) {
+          const pageBtn = document.createElement('button')
+          pageBtn.classList.add(
+            'px-3',
+            'py-1',
+            'rounded',
+            'bg-gray-300',
+            'page-btn'
+          )
+          pageBtn.textContent = i
+
+          if (i === currentPage) {
+            pageBtn.classList.add('active')
+          }
+
+          pageBtn.addEventListener('click', () => {
+            currentPage = i
+            updatePagination()
+          })
+
+          paginationNumbers.appendChild(pageBtn)
+        }
+      }
+
+      // Update Pagination State
+      function updatePagination() {
+        displayPolls(currentPage)
+        generatePagination()
+
+        document.getElementById('prevBtn').disabled = currentPage === 1
+        document.getElementById('nextBtn').disabled = currentPage === totalPages
+      }
+
+      // Initial display of polls and pagination
+      updatePagination()
+
+      // Pagination buttons
+      document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--
+          updatePagination()
+        }
+      })
+
+      document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++
+          updatePagination()
+        }
+      })
+    </script>
+  </body>
+</html>
