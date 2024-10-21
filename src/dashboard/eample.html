@@ -10,7 +10,7 @@
     <main class="flex flex-col gap-y-4">
       <header
         id="header"
-        class="flex justify-between items-center py-4 px-6 sm:px-14 border-b relative z-10"
+        class="fixed flex justify-between items-center py-4 px-6 sm:px-14 border-b bg-white w-full z-10"
       >
         <img
           id="logo"
@@ -90,7 +90,7 @@
         </h1>
       </div> -->
 
-      <div class="mx-12 mt-6">
+      <div class="mx-12 mt-32">
         <div class="flex justify-between">
           <h1 class="text-xl font-bold">Ongoing Polls</h1>
 
@@ -106,20 +106,26 @@
           id="pollsContainer"
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16"
         ></div>
-        <div
-          id="completedPolls"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16"
-        ></div>
       </div>
-      <footer class="flex justify-center items-center space-x-2">
-        <button id="prevBtn" class="rounded-xl bg-red-700 p-4">
-          <img src="../../public/Arrow - Left 2.svg" alt="" class="" />
+      <footer class="flex justify-center items-center space-x-2 my-6">
+        <button
+          id="prevBtn"
+          class="flex justify-center items-center rounded-md bg-[#F4F6F9] p-2 w-8 h-8 shadow-xl"
+        >
+          <img src="../../public/Arrow - Left 2.svg" alt="" class="h-4 w-4" />
         </button>
 
-        <div id="paginationNumbers" class="flex space-x-2"></div>
+        <div id="paginationNumbers"></div>
 
-        <button id="nextBtn" class="rounded-xl bg-red-700 p-4">
-          <img src="../../public/Arrow - Right 2.svg" alt="" class="" />
+        <button
+          id="nextBtn"
+          class="flex justify-center items-center rounded-md bg-[#F4F6F9] p-2 w-8 h-8 shadow-xl"
+        >
+          <img
+            src="../../public/Arrow - Right 2.svg"
+            alt="Next"
+            class="h-4 w-4"
+          />
         </button>
       </footer>
     </main>

@@ -47,9 +47,257 @@ const polls = [
     daysRemaining: "7 days remaining",
     icon3: "../../public/Arrow - Right 2.svg",
   },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
+
+  {
+    title: "August Team Member",
+    nominees: 32,
+
+    daysRemaining: "7 days remaining",
+    icon3: "../../public/Arrow - Right 2.svg",
+  },
 ];
 
-const pollsPerPage = 2;
+const pollsPerPage = 9;
 let currentPage = 1;
 
 function displayPolls(page) {
@@ -70,8 +318,8 @@ function displayPolls(page) {
       days remaining</h4></div></div>
     
     </div>
-    <div class="text-[#28AA63]  mt-4 border-t-2 p-2 cursor-pointer flex justify-between"> <a class="" href="URL">View Poll</a>
-  <img class="h-5 w-5" src="../../public/Arrow - Right 2.svg" alt="" style="filter: brightness(0) saturate(100%) invert(50%) sepia(50%) saturate(200%) hue-rotate(80deg);">
+    <div class="text-[#28AA63]  mt-4 border-t-2 p-2 cursor-pointer flex justify-between items-center"> <a class="" href="URL">View Poll</a>
+  <img class="h-4 w-4" src="../../public/icon.svg" alt="" >
     </div>
     </div>`;
     pollsContainer.innerHTML += pollcard;
@@ -86,11 +334,11 @@ function generatePagination() {
   paginationNumbers.innerHTML = ""; // Clear previous numbers
   for (let i = 1; i <= totalPages; i++) {
     const pageBtn = document.createElement("button");
-    pageBtn.classList.add("px-3", "py-1", "rounded", "bg-gray-300", "page-btn");
+    pageBtn.classList.add("px-3", "py-1", "rounded-md", "page-btn");
     pageBtn.textContent = i;
 
     if (i === currentPage) {
-      pageBtn.classList.add("active");
+      pageBtn.classList.add("bg-[#28AA63]", "text-white");
     }
 
     pageBtn.addEventListener("click", () => {
